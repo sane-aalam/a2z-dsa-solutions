@@ -14,7 +14,7 @@ Welcome to the **Striver's A2Z DSA Sheet** repository! This project is designed 
 - [Contributing](#contributing)
 - [License](#license)
 
-## Introduction 
+## Introduction
 
 This repository is based on the A2Z DSA Sheet by Striver. It covers a comprehensive list of DSA topics and problems designed to enhance your problem-solving skills and prepare you for coding interviews and competitive programming.
 
@@ -37,7 +37,7 @@ This repository is based on the A2Z DSA Sheet by Striver. It covers a comprehens
 15. **Graphs [Concepts & Problems]** (0/54)
 16. **Dynamic Programming [Patterns and Problems]** (0/56)
 17. **Tries** (0/7)
-18. **Strings** 
+18. **Strings**
 
 ## Progress Tracking
 
@@ -48,8 +48,8 @@ Keep track of your progress by marking completed problems. Update the numbers as
 1. **Clone the Repository:**
 
    ```bash
-   git clone https://github.com/your-username/strivers-a2z-dsa.git
-   cd strivers-a2z-dsa
+   git clone https://github.com/your-username/a2z-dsa-solutions.git
+   cd a2z-dsa-solutions
    ```
 
 2. **Navigate to the Relevant Step:**
