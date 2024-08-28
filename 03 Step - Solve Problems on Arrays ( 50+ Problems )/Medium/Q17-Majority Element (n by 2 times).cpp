@@ -58,11 +58,41 @@ public:
 
 // Optimal Approach: Moore’s Voting Algorithm:
 
- int majorityElement(vector<int>& nums) {
-      int candidate = 0;
-      int NumberOfmajorityElement = 0;
+class Solution {
+public: 
+    // inorder to reduce the space complexity of the code
+    // we can use "MORE VOTING ALGORITHM"
+    // 1. declare the firstCandidate,With count = 1
+    // 2. if you got same vote,Then incease the count
+    // 3. if you not got same vote,Then decease the count 
+    // 4. repeat the process 
+    int majorityElement(vector<int>& nums) {
+      
+      int majorityElementCandidate = 0;
+      int count = 0;
+      for(int index = 0; index < nums.size(); index++){
+        // When count become zero,This is time to assign new Candidate with count = 1
+        // apply the process 
+          if(count == 0){
+            count = 1;
+            majorityElementCandidate = nums[index];
+          }else if(majorityElementCandidate == nums[index]){
+            count++;
+          }else{
+            count--;
+          }
+      }
+       
+      int majorityElementNumberTimes = 0;
+      for(int index = 0; index < nums.size(); index++){
+        if(majorityElementCandidate == nums[index]){
+            majorityElementNumberTimes ++;
+        }
+      }
 
-      for(int i = 0; i<nums.size(); i++){
-            int candiate = 
-      }      
- }
+      if(majorityElementNumberTimes > nums.size()/2)
+        return majorityElementCandidate;
+      
+      return -1;
+    }
+};
