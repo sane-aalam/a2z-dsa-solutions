@@ -1,55 +1,60 @@
+// # Binary seach (Simple)
+// # remove one half on the basic of problem statement 
+
 class Solution {
 private:
-    int findFirstPostion(vector<int> & nums,int targetValue){
+    int FirstPositoin(vector<int> & nums, int target){
         int start = 0;
         int end = nums.size() - 1;
-        int mid = start + (end - start)/2;
-        int first_index_value = -1;
+        // to fix the overflow error conditon
+        int mid = start + (end-start)/2;
 
+        int FirstIndex = -1;
         while(start <= end){
-            if(nums[mid] == targetValue){
-                first_index_value = mid;
+            if(nums[mid] == target){
+                 // continue the seach left side to search last element into sorted array 
+                 // binary search (super)!
+                FirstIndex = mid;
                 end = mid - 1;
-            }else if(nums[mid] < targetValue){
+            }else if(nums[mid] < target){
                 start = mid + 1;
             }else{
-                end = mid - 1;
+                end = mid -1;
             }
-            // update the middle point 
-            mid = start + (end - start)/2;
+            mid = start + (end-start)/2;
         }
-        return first_index_value;
+        return FirstIndex;
     }
-    // function to search the lasted key value avaiable into sorted array 
-     int findLastPosition(vector<int> & nums,int targetValue){
+    int LastPosition(vector<int> & nums, int target){
         int start = 0;
         int end = nums.size() - 1;
-        int mid = start + (end - start)/2;
-        int last_index_value = -1;
+        // to fix the overflow error conditon
+        int mid = start + (end-start)/2;
 
+        int lastIndex = -1;
         while(start <= end){
-            if(nums[mid] == targetValue){
-                last_index_value = mid;
+            if(nums[mid] == target){
+                lastIndex = mid;
                 start = mid + 1;
-            }else if(nums[mid] < targetValue){
+                // continue the search right side to search last element into sorted array 
+            }else if(nums[mid] < target){
                 start = mid + 1;
             }else{
-                end = mid - 1;
+                end = mid -1;
             }
-            // update the middle point 
-            mid = start + (end - start)/2;
+             mid = start + (end-start)/2;
         }
-        return last_index_value;
+        return lastIndex;
     }
 public:
     vector<int> searchRange(vector<int>& nums, int target) {
 
-        if(nums.size() == 0){
+         if(nums.size() == 0){
             return {-1,-1};
-        }
+         }
+         int first_position = FirstPositoin(nums,target);
+         int last_position = LastPosition(nums,target);
 
-        int firstIndexOfTargetValue = findFirstPostion(nums,target);
-        int lastIndexOfTargetValue = findLastPosition(nums,target);
-        return {firstIndexOfTargetValue,lastIndexOfTargetValue};
+         return {first_position,last_position};
     }
 };
