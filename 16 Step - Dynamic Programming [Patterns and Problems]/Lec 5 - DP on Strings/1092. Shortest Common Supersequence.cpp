@@ -30,7 +30,7 @@ public:
             }
         }
         
-   // case-2 store the shortest common subsequence into the string 
+   // 📌 case-2 store the shortest common subsequence into the string 
         string result = "";
         int i = n;
         int j = m;
